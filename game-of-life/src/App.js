@@ -10,7 +10,7 @@ import Grid from './components/Grid'
 class App extends React.Component {
   constructor() {
     super();
-    this.speed = 250;
+    this.speed = 100;
     this.rows = 20;
     this.cols = 40;
 
@@ -22,7 +22,7 @@ class App extends React.Component {
     };
   }
 
-  selectBox = (row, col) => {
+  activeBox = (row, col) => {
     let gridCopy = arrayClone(this.state.gridFull);
     gridCopy[row][col] = !gridCopy[row][col];
     this.setState({
@@ -52,6 +52,16 @@ class App extends React.Component {
   pauseButton = () => {
     clearInterval(this.intervalId);
   };
+
+  slow = () => {
+    this.speed = 800;
+    this.playButton()
+  }
+
+  fast = () => {
+    this.speed = 100;
+    this.playButton()
+  }
 
   clear = () => {
     // clearInterval(this.intervalId);
@@ -100,6 +110,8 @@ class App extends React.Component {
         <Buttons
           playButton={this.playButton}
           pauseButton={this.pauseButton}
+          slow={this.slow}
+          fast={this.fast}
           clear={this.clear}
           random={this.random}
         />
@@ -107,7 +119,7 @@ class App extends React.Component {
           gridFull={this.state.gridFull}
           rows={this.rows}
           cols={this.cols}
-          selectBox={this.selectBox}
+          activeBox={this.activeBox}
         />
         <h2> Generations: {this.state.generation}</h2>
       </div>

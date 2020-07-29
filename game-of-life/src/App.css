@@ -1,25 +1,25 @@
 body {
-  background-color: #9E7B9B;
+  background-color: #9e7b9b;
 }
 .box {
-  display: inline-block;       
+  display: inline-block;
   border: 1px solid black;
   width: 15px;
   height: 15px;
   margin-left: -1px;
   margin-bottom: -1px;
-  }
+}
 
 .off {
-  background-color: #420F6C;
+  background-color: #420f6c;
 }
 
 .on {
-  background-color: #E34FAA;
+  background-color: #e34faa;
 }
-  
-.box:hover { 
-  background: #00CCFF;
+
+.box:hover {
+  background: #00ccff;
 }
 
 .center {
@@ -35,9 +35,12 @@ body {
   box-shadow: 0px 0px 20px white;
   margin-top: 20px;
 }
-  
-h1, h2, h3, h4 {
-  font-family: 'Righteous', cursive;
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Righteous", cursive;
   color: #160524;
   margin: auto;
   text-align: center;
@@ -51,25 +54,24 @@ h4 {
 
 button {
   box-shadow: 3px 2px 0px 0px #899599;
-	background:linear-gradient(to bottom, #0AFFF3 5%, #bab1ba 100%);
-	background-color:#E34FAA;
-	border-radius:2px;
-	border:1px solid #d6bcd6;
-	display:inline-block;
-	cursor:pointer;
-	color:#3a8a9e;
-	font-family: 'Righteous', cursive;
-	font-size:17px;
-	padding:7px 25px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #e1e2ed;
- 
+  background: linear-gradient(to bottom, #0afff3 50%, #bab1ba 100%);
+  background-color: #e34faa;
+  border-radius: 2px;
+  border: 1px solid #d6bcd6;
+  display: inline-block;
+  cursor: pointer;
+  color: #3a8a9e;
+  font-family: "Righteous", cursive;
+  font-size: 17px;
+  padding: 7px 25px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #e1e2ed;
 }
 button:hover {
-	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
-	background-color:#bab1ba;
+  background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+  background-color: #bab1ba;
 }
 button:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }

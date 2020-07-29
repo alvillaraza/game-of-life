@@ -1,8 +1,8 @@
 import React from 'react';
 
 class Box extends React.Component {
-  selectBox = () => {
-    this.props.selectBox(this.props.row, this.props.col);
+  activeBox = () => {
+    this.props.activeBox(this.props.row, this.props.col);
   };
 
   render() {
@@ -10,7 +10,7 @@ class Box extends React.Component {
       <div
         className={this.props.boxClass}
         id={this.props.id}
-        onClick={this.selectBox}
+        onClick={this.activeBox}
       />
     );
   }
@@ -34,7 +34,7 @@ class Grid extends React.Component {
             boxId={boxId}
             row={i}
             col={k}
-            selectBox={this.props.selectBox}
+            activeBox={this.props.activeBox}
           />
         );
       }

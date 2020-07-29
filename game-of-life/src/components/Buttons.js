@@ -11,7 +11,13 @@ class Buttons extends React.Component {
             Play
           </button>
           <button className="btn btn-default" onClick={this.props.pauseButton}>
-            Pause
+          Pause
+          </button>
+          <button className="btn btn-default" onClick={this.props.slow}>
+          Slow
+          </button>
+          <button className="btn btn-default" onClick={this.props.fast}>
+            Fast
           </button>
           <button className="btn btn-default" onClick={this.props.clear}>
             Clear
