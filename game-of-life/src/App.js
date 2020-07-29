@@ -3,6 +3,7 @@ import './App.css';
 
 import Buttons from './components/Buttons'
 import Grid from './components/Grid'
+import Rules from './components/Rules'
 
 
 
@@ -122,6 +123,7 @@ class App extends React.Component {
           activeBox={this.activeBox}
         />
         <h2> Generations: {this.state.generation}</h2>
+        <p><Rules/></p>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 body {
   background-color: #9e7b9b;
+
 }
 .box {
   display: inline-block;
@@ -50,6 +51,16 @@ h4 {
 
 h4 {
   margin-top: 0px;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.rules {
+  width: 80%;
+  margin: 7%;
+  padding-left: 5%;
 }
 
 button {
