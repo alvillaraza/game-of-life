@@ -1,12 +1,9 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import Buttons from './components/Buttons'
-import Grid from './components/Grid'
-import Rules from './components/Rules'
-
-
-
+import Buttons from "./components/Buttons";
+import Grid from "./components/Grid";
+import Rules from "./components/Rules";
 
 class App extends React.Component {
   constructor() {
@@ -56,30 +53,29 @@ class App extends React.Component {
 
   slow = () => {
     this.speed = 800;
-    this.playButton()
-  }
+    this.playButton();
+  };
 
   fast = () => {
     this.speed = 100;
-    this.playButton()
-  }
+    this.playButton();
+  };
 
   clear = () => {
-    // clearInterval(this.intervalId);
     var grid = Array(this.rows)
       .fill()
       .map(() => Array(this.cols).fill(false));
     this.setState({ gridFull: grid, generation: 0 });
-
   };
-
 
   play = () => {
     let grid1 = this.state.gridFull;
     let grid2 = arrayClone(this.state.gridFull);
     for (let i = 0; i < this.rows; i++) {
       for (let k = 0; k < this.cols; k++) {
-        let count = 0;
+        let count = 0; //count = how many neighbors it has
+
+        //check each if the 8 neighbors, if there is a neighbor increase count + 1
         if (i > 0) if (grid1[i - 1][k]) count++;
         if (i > 0 && k > 0) if (grid1[i - 1][k - 1]) count++;
         if (i > 0 && k < this.cols - 1) if (grid1[i - 1][k + 1]) count++;
@@ -89,7 +85,11 @@ class App extends React.Component {
         if (i < this.rows - 1 && k > 0) if (grid1[i + 1][k - 1]) count++;
         if (i < this.rows - 1 && k < this.cols - 1)
           if (grid1[i + 1][k + 1]) count++;
+
+        //if there's less than 2 or more than 3, the cell dies
         if (grid1[i][k] && (count < 2 || count > 3)) grid2[i][k] = false;
+
+        //if it's dead and it has 3 nieghbors, it becomes alive
         if (!grid1[i][k] && count === 3) grid2[i][k] = true;
       }
     }
@@ -123,7 +123,9 @@ class App extends React.Component {
           activeBox={this.activeBox}
         />
         <h2> Generations: {this.state.generation}</h2>
-        <p><Rules/></p>
+        <p>
+          <Rules />
+        </p>
       </div>
     );
   }
@@ -132,6 +134,5 @@ class App extends React.Component {
 function arrayClone(arr) {
   return JSON.parse(JSON.stringify(arr));
 }
-
 
 export default App;
